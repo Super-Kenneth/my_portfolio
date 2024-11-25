@@ -9,7 +9,7 @@ export default function Navbar() {
   const closeModal = () => setModal(false);
 
   return (
-    <div className=" flex flex-row w-full h-[10%] backdrop-blur fixed inset-0 text-white">
+    <div className=" flex flex-row w-full h-[10%] backdrop-blur fixed inset-0 text-white border-b">
       <div className=" p-6 w-[60%] flex items-center justify-start">
         <button className="font-dancingScript w-10 h-10 border border-white rounded-full p-2 flex justify-center items-center hover:scale-110">
           K
@@ -50,16 +50,16 @@ export default function Navbar() {
 
       {modal && (
         <div className=" bg-black bg-opacity-80 fixed inset-0 w-screen h-screen flex justify-start">
-          <div className=" w-[70%] h-full bg-white p-4">
-            <div className="w-full flex justify-between h-[5%]">
-              <button className="font-dancingScript w-10 h-10 text-black border border-black rounded-full p-2 flex justify-center items-center hover:scale-110">
+          <div className=" w-[70%] h-full bg-black border-r p-4">
+            <div className="w-full flex flex-row justify-between h-[5%]">
+              <button className="font-dancingScript w-10 h-10 border border-white rounded-full p-2 flex justify-center items-center hover:scale-110">
                 K
               </button>
               <button onClick={closeModal}>
                 <img src="/icons/close.svg" alt="close" className=" h-full" />
               </button>
             </div>
-            <div className=" w-full text-black flex flex-col gap-4 mt-6">
+            <div className=" w-full flex flex-col gap-4 mt-6">
               <button className="">About Me</button>
               <button className="">Projects/Works</button>
               <button className="">Skills</button>
