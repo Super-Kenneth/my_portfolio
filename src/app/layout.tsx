@@ -14,9 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=" bg-black">
+      <body className=" bg-black text-white p-4">
         <Navbar />
         {children}
+        <footer className=" md:text-xl p-4">© 2024 Kenneth Manuel</footer>
       </body>
     </html>
   );

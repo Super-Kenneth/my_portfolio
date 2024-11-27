@@ -10,11 +10,11 @@ export default function Home() {
     setIsVisible(true);
   }, []);
   return (
-    <main className=" w-screen p-4">
+    <main className=" w-full">
       <div className="w-full text-white font-HelveticaNeue flex flex-col items-center mt-36">
         <div className="h-full flex flex-col items-center text-center">
           <h1
-            className={`text-[1.5em] md:text-[4em] transition-all duration-1000 transform ${
+            className={`text-[1.5em] font-extrabold md:text-[4em] transition-all duration-1000 transform ${
               isVisible
                 ? "opacity-100 -translate-y-0"
                 : "opacity-0 -translate-y-96"
@@ -23,7 +23,7 @@ export default function Home() {
             <span>Hi, I'm Kenneth C. Manuel</span>
           </h1>
           <p
-            className={` text-[1.5em] md:text-[4em] transition-all duration-500 transform ${
+            className={` text-[1.3em] md:text-[2.5em] transition-all duration-500 transform ${
               isVisible
                 ? "opacity-100 -translate-y-0"
                 : "opacity-0  -translate-y-96"
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className=" text-center w-full md:w-[50%] mt-6">
           <p
-            className={`md:text-[1.5em] transition-all duration-300 transform ${
+            className={`md:text-[1.5em] text-gray-500 transition-all duration-300 transform ${
               isVisible
                 ? "opacity-100 -translate-y-0"
                 : "opacity-0 -translate-y-96"

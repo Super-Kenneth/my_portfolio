@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import type { PluginCreator } from "tailwindcss/types/config";
 
 export default {
   content: [
@@ -19,5 +20,16 @@ export default {
       },
     },
   },
-  plugins: [],
+
+  plugins: [
+    // Type the plugin function properly using `PluginCreator`
+    (({ addComponents }) => {
+      addComponents({
+        ".webkit-justify-end": {
+          "justify-content": "flex-end",
+          "-webkit-justify-content": "flex-end", // Safari-specific prefix
+        },
+      });
+    }) as PluginCreator,
+  ],
 } satisfies Config;

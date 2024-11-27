@@ -1,17 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [modal, setModal] = useState(false);
-  const [activePage, setActivePage] = useState<string>("/");
+  const pathname = usePathname();
   const router = useRouter();
 
   const toggleModal = () => setModal((prev) => !prev);
+
   const goToPage = (path: string) => {
-    setActivePage(path);
-    setModal(false);
     router.push(path);
+    setModal(false);
   };
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const Navbar = () => {
   }, [modal]);
 
   return (
-    <div className="flex w-full h-[10%] backdrop-blur fixed inset-0 text-white border-b z-50">
+    <div className="flex justify-between w-full h-[10%] backdrop-blur fixed inset-0 text-white border-b z-50">
       <div className="p-6 w-[70%] flex items-center justify-start">
         <button
           className="font-dancingScript w-10 h-10 border border-white rounded-full p-2 hover:scale-110"
@@ -44,7 +45,7 @@ const Navbar = () => {
               key={text}
               onClick={() => goToPage(path)}
               className={`hover:scale-110 relative group ${
-                activePage === path ? "border-b-2 border-white" : ""
+                pathname === path ? "border-b-2 border-white" : ""
               }`}
             >
               <span className="border-b border-transparent group-hover:border-white transition-all duration-300 ease-in-out">
@@ -56,7 +57,7 @@ const Navbar = () => {
         })}
       </div>
 
-      <div className="p-4 w-[40%] flex justify-end md:hidden">
+      <div className="p-4 w-[20%] flex justify-end md:hidden">
         <button onClick={toggleModal}>
           <img src="/icons/hamburger.svg" alt="hamburger" className="h-full" />
         </button>
@@ -78,10 +79,10 @@ const Navbar = () => {
                     key={text}
                     onClick={() => goToPage(path)}
                     className={`hover:scale-110 relative group ${
-                      activePage === path ? "border-b-2 border-white" : ""
+                      pathname === path ? "border-b-2 border-white" : ""
                     }`}
                   >
-                    <span className=" text-[1.3em] border-b border-transparent group-hover:border-white transition-all duration-300 ease-in-out">
+                    <span className="text-[1.3em] border-b border-transparent group-hover:border-white transition-all duration-300 ease-in-out">
                       {text}
                     </span>
                     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
