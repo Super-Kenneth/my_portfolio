@@ -11,7 +11,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <main className="w-full h-full text-white font-HelveticaNeue flex flex-col md:flex-row mt-28 md:mt-36">
+    <main className="w-full h-full text-white font-HelveticaNeue flex flex-col md:flex-row mt-24 md:mt-36">
       <div
         className={` w-full h-full md:w-[50%] px-4 transition-all duration-500 md:duration-1000 transform${
           isVisible

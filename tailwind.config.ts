@@ -20,16 +20,4 @@ export default {
       },
     },
   },
-
-  plugins: [
-    // Type the plugin function properly using `PluginCreator`
-    (({ addComponents }) => {
-      addComponents({
-        ".webkit-justify-end": {
-          "justify-content": "flex-end",
-          "-webkit-justify-content": "flex-end", // Safari-specific prefix
-        },
-      });
-    }) as PluginCreator,
-  ],
 } satisfies Config;

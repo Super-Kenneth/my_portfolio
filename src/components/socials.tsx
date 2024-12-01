@@ -35,7 +35,7 @@ export default function Socials() {
             rel="noopener noreferrer"
             className=" w-[30%]"
           >
-            <button className=" font-bold w-full bg-white rounded-xl text-black p-2">
+            <button className=" font-bold w-full bg-white rounded-xl text-black hover:bg-opacity-50 p-2">
               Visit
             </button>
           </a>

@@ -14,13 +14,13 @@ export default function Home() {
       <div className="w-full text-white font-HelveticaNeue flex flex-col items-center mt-36">
         <div className="h-full flex flex-col items-center text-center">
           <h1
-            className={`text-[1.5em] font-extrabold md:text-[4em] transition-all duration-1000 transform ${
+            className={`text-[2em] font-extrabold md:text-[5em] transition-all duration-1000 transform ${
               isVisible
                 ? "opacity-100 -translate-y-0"
                 : "opacity-0 -translate-y-96"
             }`}
           >
-            <span>Hi, I'm Kenneth C. Manuel</span>
+            <span>Hi, I'm KENNETH</span>
           </h1>
           <p
             className={` text-[1.3em] md:text-[2.5em] transition-all duration-500 transform ${
