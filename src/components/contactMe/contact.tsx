@@ -39,7 +39,7 @@ export default function Contacts() {
             </div>
             <div className=" w-full flex justify-center md:justify-end">
               <a href={contact.link} target="_blank" rel="noopener noreferrer">
-                <button className="bg-white text-black p-3 rounded-xl font-bold hover:bg-opacity-50">
+                <button className="bg-white text-black p-3 rounded-xl font-bold md:hover:bg-opacity-50">
                   {contact.send}
                 </button>
               </a>

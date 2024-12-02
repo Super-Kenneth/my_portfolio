@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import PersonalInfo from "@/components/personal_info";
-
+import PersonalInfo from "@/components/aboutMe/personal_info";
+import Techstack from "@/components/aboutMe/techstack";
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -9,10 +9,10 @@ export default function About() {
     setIsVisible(true);
   }, []);
   return (
-    <main className="w-full text-white font-HelveticaNeue flex flex-col items-center mt-24 md:mt-36">
+    <main className="w-full text-white font-HelveticaNeue flex flex-col items-center mt-24 md:mt-36 overflow-x-hidden">
       <div className=" w-full flex flex-col md:flex-row">
         <div
-          className={` md:w-[40%] flex justify-center items-center transition-all duration-500 md:duration-1000 transform${
+          className={` md:w-[50%] flex justify-center items-center transition-all duration-500 md:duration-1000 transform${
             isVisible
               ? "opacity-100 -translate-x-0"
               : "opacity-0 -translate-x-[100%]"
@@ -21,20 +21,18 @@ export default function About() {
           <img
             src="/images/me.png"
             alt="me"
-            className=" h-52 rounded-full md:h-80"
+            className=" h-52 rounded-full md:h-96"
           />
         </div>
-        <div
-          className={` flex flex-col justify-center items-center gap-y-4 md:text-start md:w-[60%] transition-all duration-1000 transform p-4 ${
-            isVisible
-              ? "opacity-100 -translate-x-0 md:translate-x-0"
-              : "opacity-0 -translate-x-[100%] md:translate-x-[100%]"
-          } `}
-        >
-          <h1 className=" text-[1.5em] md:text-[3em] font-bold">Personal Information</h1>
-          <PersonalInfo/>
+        <div className=" mt-4 flex flex-col justify-center items-center gap-y-2 md:items-start md:text-start md:w-[50%]">
+          <h1 className=" text-[1.5em] md:text-[3em] font-bold">
+            Personal Information
+          </h1>
+          <PersonalInfo />
         </div>
       </div>
+      <Techstack />
+      
     </main>
   );
 }

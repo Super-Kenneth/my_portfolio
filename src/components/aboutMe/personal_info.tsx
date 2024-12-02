@@ -7,11 +7,11 @@ export default function PersonalInfo() {
   return (
     <>
       {info.map((item, index) => (
-        <table key={index} className=" text-[1em] md:text-[2em] text-gray-500 w-full ">
+        <table key={index} className=" text-[1em] md:text-[1.5em] text-gray-500 w-full ">
           <tbody>
             <tr>
-              <td className="w-[35%] text-left">{item.info_name}</td>
-              <td className="w-[65%] text-left ">{item.details}</td>
+              <td className="w-[30%] text-left">{item.info_name}</td>
+              <td className="w-[70%] text-left ">{item.details}</td>
             </tr>
           </tbody>
         </table>

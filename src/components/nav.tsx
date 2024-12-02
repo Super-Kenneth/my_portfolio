@@ -66,7 +66,7 @@ const Navbar = () => {
       {modal && (
         <div className="bg-black bg-opacity-80 fixed inset-0 w-screen h-screen flex flex-col justify-end">
           <div className="w-full h-[70%] bg-black border-t rounded-t-3xl p-4">
-            <div className="w-full flex justify-end h-[5%]">
+            <div className="w-full flex flex-row-reverse h-[5%]">
               <button onClick={toggleModal}>
                 <img src="/icons/close.svg" alt="close" className="h-full" />
               </button>

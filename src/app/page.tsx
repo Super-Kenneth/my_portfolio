@@ -10,7 +10,7 @@ export default function Home() {
     setIsVisible(true);
   }, []);
   return (
-    <main className=" w-full">
+    <main className=" w-full overflow-x-hidden">
       <div className="w-full text-white font-HelveticaNeue flex flex-col items-center mt-36">
         <div className="h-full flex flex-col items-center text-center">
           <h1
@@ -51,7 +51,7 @@ export default function Home() {
       </div>
 
       <About />
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
     </main>
   );

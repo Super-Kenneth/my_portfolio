@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import Socials from "@/components/socials";
-import Contacts from "@/components/contact";
+import Socials from "@/components/contactMe/socials";
+import Contacts from "@/components/contactMe/contact";
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +11,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <main className="w-full h-full text-white font-HelveticaNeue flex flex-col md:flex-row mt-24 md:mt-36">
+    <main className="w-full h-full text-white font-HelveticaNeue flex flex-col md:flex-row mt-24 md:mt-36 overflow-x-hidden">
       <div
         className={` w-full h-full md:w-[50%] px-4 transition-all duration-500 md:duration-1000 transform${
           isVisible
@@ -19,7 +19,7 @@ export default function Contact() {
             : "opacity-0 -translate-x-[100%]"
         }`}
       >
-        <div className="w-full text-center font-bold text-3xl animate-bounce">
+        <div className="mt-2 w-full text-center font-bold text-3xl animate-bounce">
           LET'S CONNECT
         </div>
         <Contacts />
