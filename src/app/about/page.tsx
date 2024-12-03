@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import PersonalInfo from "@/components/aboutMe/personal_info";
 import Techstack from "@/components/aboutMe/techstack";
+import Certificates from "@/components/aboutMe/certificates";
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,7 +33,7 @@ export default function About() {
         </div>
       </div>
       <Techstack />
-      
+      <Certificates/>
     </main>
   );
 }
