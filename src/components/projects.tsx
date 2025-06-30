@@ -5,7 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { FaHtml5, FaCss3Alt } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
+import { SiJavascript, SiTailwindcss } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 import { GoLinkExternal } from "react-icons/go";
 
 type Project = {
@@ -28,10 +29,26 @@ const projects: Project[] = [
   {
     name: "Tipsy Drinks",
     image: "/projects/tipsydrinks.png",
-    techstacks: [FaHtml5, FaCss3Alt, SiJavascript],
+    techstacks: [RiNextjsFill, SiTailwindcss],
     description:
       "Tipsy Drinks is my personal project to practice my skills in frontend development and my ability in UI/UX. It features a collection of drink recipes with a modern design.",
     link: " ",
+  },
+  {
+    name: "!JokesDev",
+    image: "/projects/jokesdev.png",
+    techstacks: [RiNextjsFill, SiTailwindcss],
+    description:
+      "!JokesDev is a fun project that generates random jokes about Devs using the JokeAPI. It showcases my skills in Next.js and Tailwind CSS, Also to practice my skills in Frontend Development and creating responsive designs.",
+    link: "https://jokesdev.vercel.app/",
+  },
+  {
+    name: "Demotivational Quotes",
+    image: "/projects/demotivational-qoutes.png",
+    techstacks: [RiNextjsFill, SiTailwindcss],
+    description:
+      "Demotivational Quotes is a project that generates random demotivational quotes using the Quotable API. It showcases my skills in Next.js and Tailwind CSS, Also to practice my skills in Frontend Development and creating responsive designs.",
+    link: "https://demotivational-qoute.vercel.app/",
   },
 ];
 
@@ -120,7 +137,7 @@ export default function Projects() {
       </main>
 
       {isModalOpen && selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 px-4">
+        <div className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50 px-4">
           <div className="bg-white text-black rounded-lg p-6 w-full max-w-2xl relative">
             <button
               onClick={closeModal}
