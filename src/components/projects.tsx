@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ReactNode } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
@@ -8,16 +9,40 @@ import { FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { GoLinkExternal } from "react-icons/go";
+import { TbBrandReactNative } from "react-icons/tb";
 
 type Project = {
   name: string;
   image: string;
   techstacks: React.ElementType[];
-  description: string;
+  description: string | ReactNode;
   link: string;
 };
 
 const projects: Project[] = [
+  {
+    name: "CMI Connect",
+    image: "/projects/cmi-connect.png",
+    techstacks: [TbBrandReactNative, SiTailwindcss],
+    description: (
+      <>
+        CMI Connect is our Thesis Project, a mobile application that allows
+        students to view their Attendance logs and their E-wallet balance. It
+        also has a feature that allows students to view the Announcements from
+        the school. <br />
+        <br />
+        The E-wallet feature allows students to buy products from the canteen by
+        tapping their NFC ID, and it will automatically deduct the amount from
+        their E-wallet.
+        <br />
+        <br />
+        Students can also send money to their friends using the E-wallet. <br />
+        <br />
+        We used React Native and TailwindCss to develop the app.
+      </>
+    ),
+    link: " ",
+  },
   {
     name: "Vans Clone",
     image: "/projects/vans-clone.png",
@@ -94,7 +119,7 @@ export default function Projects() {
               height={300}
               className="w-auto h-auto mx-auto rounded"
             />
-            <h2 className="text-[8vw] lg:text-[3vw] font-bold mt-4">
+            <h2 className="text-[8vw] lg:text-[3vw] line-clamp-1 font-bold mt-4">
               {project.name}
             </h2>
             <p className="text-sm line-clamp-2 px-6">{project.description}</p>
@@ -138,7 +163,7 @@ export default function Projects() {
 
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50 px-4">
-          <div className="bg-white text-black rounded-lg p-6 w-full max-w-2xl relative">
+          <div className="bg-white text-black rounded-lg p-6 w-full max-w-2xl relative max-h-[90%] overflow-y-scroll">
             <button
               onClick={closeModal}
               className="absolute top-2 right-4 text-3xl font-bold text-black"
